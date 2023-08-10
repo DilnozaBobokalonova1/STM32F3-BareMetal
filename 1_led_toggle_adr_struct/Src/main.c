@@ -32,51 +32,37 @@
 
 typedef struct {
 	volatile uint32_t DUMMY[5];		//32*5 = 160 bits occupied
-	volatile uint32_t AHBENR;		/*!< RCC AHB peripheral clock register,		Address offset: 0x14		*/
+	volatile uint32_t AHBENR; /*!< RCC AHB peripheral clock register,		Address offset: 0x14		*/
 
 } RCC_TypeDef;
 
 typedef struct {
-	volatile uint32_t MODER;		/*!< GPIO port mode register,					Address offset: 0x00		*/
-	volatile uint32_t DUMMY[4];		/* for the purpose of taking up same space in mem as 4 registers before ODR */
-	volatile uint32_t ODR;			/*!< GPIO port output data register,			Address offset: 0x14		*/
+	volatile uint32_t MODER; /*!< GPIO port mode register,					Address offset: 0x00		*/
+	volatile uint32_t DUMMY[4]; /* for the purpose of taking up same space in mem as 4 registers before ODR */
+	volatile uint32_t ODR; /*!< GPIO port output data register,			Address offset: 0x14		*/
 } GPIO_TypeDef;
 
 #define RCC					((RCC_TypeDef*) RCC_BASE)
 #define GPIOE				((GPIO_TypeDef*) GPIOE_BASE)
-
 
 int main(void) {
 	// 1. Enable clock access to GPIOE
 	RCC->AHBENR |= GPIOEEN;
 
 	// 2. Set PE15 as output pin; for each pin we have two bits within MODER controlling it
-	GPIOE->MODER |= (1U<<30);
-	GPIOE->MODER &= ~(1U<<31);
+	GPIOE->MODER |= (1U << 30);
+	GPIOE->MODER &= ~(1U << 31);
 
 	// 2.2 Set PE10 as output pin
-	GPIOE->MODER |= (1U<<16);
-	GPIOE->MODER &= ~(1U<<17);
+	GPIOE->MODER |= (1U << 16);
+	GPIOE->MODER &= ~(1U << 17);
 
-	while(1) {
+	while (1) {
 		// 4. toggle PA15 (XOR it, hence 1 only if the curr pin bit is 0, 0 if the curr pin bit is 1)
 		GPIOE->ODR ^= LED_PIN;
 		GPIOE->ODR ^= LED_4_PIN;
-		for (int i = 0; i < 1000000; i++) {}
+		for (int i = 0; i < 1000000; i++) {
+		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
