@@ -1,0 +1,101 @@
+//where is LED connected?
+//Port: Port E
+//Pin: 9, 8, 10, 15, 11, 14
+// User LD3: red LED is a user LED connected to the I/O PE9 of the STM32F303VCT6.
+// User LD4: blue LED is a user LED connected to the I/O PE8 of the STM32F303VCT6.
+// User LD5: orange LED is a user LED connected to the I/O PE10 of the STM32F303VCT6.
+// User LD6: green LED is a user LED connected to the I/O PE15 of the STM32F303VCT6.
+// User LD7: green LED is a user LED connected to the I/O PE11 of the STM32F303VCT6.
+// User LD8: orange LED is a user LED connected to the I/O PE14 of the STM32F303VCT6.
+// AHB2 starts at address 0x4800 0000
+// GPIOE is at boundary addrs 0x4800 1000 - 0x4800 13FF
+#include <stdint.h>
+#define PERIPH_BASE			 	(0x40000000UL)
+#define AHB2_PERIPH_OFFSET		(0x08000000UL)
+#define AHB2_PERIPH_BASE		(PERIPH_BASE + AHB2_PERIPH_OFFSET)
+
+//0x4800 1000 - 0x4800 13FF
+#define GPIOE_OFFSET			(0x1000UL)
+#define GPIOE_BASE				(AHB2_PERIPH_BASE + GPIOE_OFFSET)
+
+//RCC is connected to AHB1 bus so we need to account
+//for it by defining extra address constants
+#define AHB1_PERIPH_OFFSET		(0x00020000UL)
+#define AHB1_PERIPH_BASE		(PERIPH_BASE + AHB1_PERIPH_OFFSET)
+#define RCC_OFFSET				(0x1000UL)
+#define RCC_BASE				(AHB1_PERIPH_BASE + RCC_OFFSET)
+
+//to enable pin E, we have to set its position to 1 (its at Bit 21)
+#define GPIOEEN					(1U<<21) //	0b 0000 0000 0001 0000 0000 0000 0000 0000
+
+#define PIN15					(1U<<15)
+#define PIN8					(1U<<8)
+#define LED_PIN					PIN15
+//turn LED4 to blue color
+#define LED_4_PIN				PIN8
+
+#define __IO 					volatile
+
+//we only need AHPENR register to enable the clock
+//the address spaces after do not have to be defined
+//we need to account for the space before which have
+//clock control register CR/clock config register CFGR
+//clock interrupt register CIR/APB1 & APB2 reset registers
+typedef struct {
+	volatile uint32_t DUMMY[5];		//32*5 = 160 bits occupied
+	volatile uint32_t AHBENR;		/*!< RCC AHB peripheral clock register,		Address offset: 0x14		*/
+
+} RCC_TypeDef;
+
+typedef struct {
+	volatile uint32_t MODER;		/*!< GPIO port mode register,					Address offset: 0x00		*/
+//	__IO uint32_t OTYPER;			/*!< GPIO port output type register,			Address offset: 0x04		*/
+//	__IO uint32_t OSPEEDR;			/*!< GPIO port output speed register,			Address offset: 0x08		*/
+//	__IO uint32_t PUPDR;			/*!< GPIO port pull-up/pull-down register,		Address offset: 0x0C		*/
+//	__IO uint32_t IDR;				/*!< GPIO port input data register,				Address offset: 0x10		*/
+	volatile uint32_t DUMMY[4];		/* for the purpose of taking up same space in mem as 4 registers before ODR */
+	volatile uint32_t ODR;			/*!< GPIO port output data register,			Address offset: 0x14		*/
+//	__IO uint32_t BSRR;				/*!< GPIO port bit set/reset register,			Address offset: 0x18		*/
+//	__IO uint32_t LCKR;				/*!< GPIO port configuration lock register,		Address offset: 0x1C		*/
+//	__IO uint32_t AFR[2];			/*!< GPIO alternate function register,			Address offset: 0x20-0x24	*/
+} GPIO_TypeDef;
+
+#define RCC					((RCC_TypeDef*) RCC_BASE)
+#define GPIOE				((GPIO_TypeDef*) GPIOE_BASE)
+
+
+int main(void) {
+	// 1. Enable clock access to GPIOE
+	RCC->AHBENR |= GPIOEEN;
+
+	// 2. Set PE15 as output pin; for each pin we have two bits within MODER controlling it
+	GPIOE->MODER |= (1U<<30);
+	GPIOE->MODER &= ~(1U<<31);
+
+//	// 2.2 Set PE10 as output pin
+	GPIOE->MODER |= (1U<<16);
+	GPIOE->MODER &= ~(1U<<17);
+
+	while(1) {
+		// 4. toggle PA15 (XOR it, hence 1 only if the curr pin bit is 0, 0 if the curr pin bit is 1)
+		GPIOE->ODR ^= LED_PIN;
+		GPIOE->ODR ^= LED_4_PIN;
+		for (int i = 0; i < 1000000; i++) {}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
