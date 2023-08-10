@@ -1,0 +1,269 @@
+20:09:06 **** Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:22: warning: value computed is not used [-Wunused-value]
+   52 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:18:69: error: 'GPIOB_OFFSET' undeclared (first use in this function); did you mean 'GPIOE_OFFSET'?
+   18 | #define GPIOE_BASE                              (AHB2_PERIPH_BASE + GPIOB_OFFSET)
+      |                                                                     ^~~~~~~~~~~~
+../Src/main.c:32:71: note: in expansion of macro 'GPIOE_BASE'
+   32 | #define GPIOE_MODE_R                    (* (volatile unsigned int *) (GPIOE_BASE + MODE_R_OFFSET))
+      |                                                                       ^~~~~~~~~~
+../Src/main.c:55:9: note: in expansion of macro 'GPIOE_MODE_R'
+   55 |         GPIOE_MODE_R != (1U<<30);  //Set bit 30 to 1
+      |         ^~~~~~~~~~~~
+../Src/main.c:18:69: note: each undeclared identifier is reported only once for each function it appears in
+   18 | #define GPIOE_BASE                              (AHB2_PERIPH_BASE + GPIOB_OFFSET)
+      |                                                                     ^~~~~~~~~~~~
+../Src/main.c:32:71: note: in expansion of macro 'GPIOE_BASE'
+   32 | #define GPIOE_MODE_R                    (* (volatile unsigned int *) (GPIOE_BASE + MODE_R_OFFSET))
+      |                                                                       ^~~~~~~~~~
+../Src/main.c:55:9: note: in expansion of macro 'GPIOE_MODE_R'
+   55 |         GPIOE_MODE_R != (1U<<30);  //Set bit 30 to 1
+      |         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+20:09:52 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:22: warning: value computed is not used [-Wunused-value]
+   52 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:18:69: error: 'GPIOB_OFFSET' undeclared (first use in this function); did you mean 'GPIOE_OFFSET'?
+   18 | #define GPIOE_BASE                              (AHB2_PERIPH_BASE + GPIOB_OFFSET)
+      |                                                                     ^~~~~~~~~~~~
+../Src/main.c:32:71: note: in expansion of macro 'GPIOE_BASE'
+   32 | #define GPIOE_MODE_R                    (* (volatile unsigned int *) (GPIOE_BASE + MODE_R_OFFSET))
+      |                                                                       ^~~~~~~~~~
+../Src/main.c:55:9: note: in expansion of macro 'GPIOE_MODE_R'
+   55 |         GPIOE_MODE_R != (1U<<30);  //Set bit 30 to 1
+      |         ^~~~~~~~~~~~
+../Src/main.c:18:69: note: each undeclared identifier is reported only once for each function it appears in
+   18 | #define GPIOE_BASE                              (AHB2_PERIPH_BASE + GPIOB_OFFSET)
+      |                                                                     ^~~~~~~~~~~~
+../Src/main.c:32:71: note: in expansion of macro 'GPIOE_BASE'
+   32 | #define GPIOE_MODE_R                    (* (volatile unsigned int *) (GPIOE_BASE + MODE_R_OFFSET))
+      |                                                                       ^~~~~~~~~~
+../Src/main.c:55:9: note: in expansion of macro 'GPIOE_MODE_R'
+   55 |         GPIOE_MODE_R != (1U<<30);  //Set bit 30 to 1
+      |         ^~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j9 all" terminated with exit code 2. Build might be incomplete.
+20:10:07 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:22: warning: value computed is not used [-Wunused-value]
+   52 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:55:22: warning: value computed is not used [-Wunused-value]
+   55 |         GPIOE_MODE_R != (1U<<30);  //Set bit 30 to 1
+      |                      ^
+../Src/main.c:60:28: warning: value computed is not used [-Wunused-value]
+   60 |                 GPIOE_OD_R != LED_PIN;
+      |                            ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:11:58 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+   text	   data	    bss	    dec	    hex	filename
+    692	      8	   1568	   2268	    8dc	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+20:12:37 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:52:22: warning: value computed is not used [-Wunused-value]
+   52 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:60:28: warning: value computed is not used [-Wunused-value]
+   60 |                 GPIOE_OD_R != LED_PIN;
+      |                            ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    700	      8	   1568	   2276	    8e4	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:13:17 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:53:22: warning: value computed is not used [-Wunused-value]
+   53 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:61:28: warning: value computed is not used [-Wunused-value]
+   61 |                 GPIOE_OD_R != LED_PIN;
+      |                            ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    700	      8	   1568	   2276	    8e4	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:13:33 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:53:22: warning: value computed is not used [-Wunused-value]
+   53 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:61:28: warning: value computed is not used [-Wunused-value]
+   61 |                 GPIOE_OD_R != LED_PIN;
+      |                            ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    700	      8	   1568	   2276	    8e4	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:18:09 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:53:22: warning: value computed is not used [-Wunused-value]
+   53 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+../Src/main.c:61:28: warning: value computed is not used [-Wunused-value]
+   61 |                 GPIOE_OD_R != LED_PIN;
+      |                            ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    736	      8	   1568	   2312	    908	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:21:51 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:22: warning: value computed is not used [-Wunused-value]
+   55 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    744	      8	   1568	   2320	    910	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:28:48 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:22: warning: value computed is not used [-Wunused-value]
+   55 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    768	      8	   1568	   2344	    928	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:29:13 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:22: warning: value computed is not used [-Wunused-value]
+   55 |         RCC_AHB1EN_R != GPIOEEN;
+      |                      ^
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    756	      8	   1568	   2332	    91c	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:39:05 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    740	      8	   1568	   2316	    90c	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:39:36 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    740	      8	   1568	   2316	    90c	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 
+20:40:31 **** Incremental Build of configuration Debug for project 0_led_toggle_adr ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "0_led_toggle_adr.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="0_led_toggle_adr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 0_led_toggle_adr.elf
+ 
+arm-none-eabi-size   0_led_toggle_adr.elf 
+arm-none-eabi-objdump -h -S  0_led_toggle_adr.elf  > "0_led_toggle_adr.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	0_led_toggle_adr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 0_led_toggle_adr.list
+ 

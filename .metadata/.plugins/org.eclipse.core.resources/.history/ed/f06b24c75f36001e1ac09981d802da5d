@@ -1,0 +1,23 @@
+//where is LED connected?
+//Port: Port E
+//Pin: 9, 8, 10, 15, 11, 14
+// User LD3: red LED is a user LED connected to the I/O PE9 of the STM32F303VCT6.
+// User LD4: blue LED is a user LED connected to the I/O PE8 of the STM32F303VCT6.
+// User LD5: orange LED is a user LED connected to the I/O PE10 of the STM32F303VCT6.
+// User LD6: green LED is a user LED connected to the I/O PE15 of the STM32F303VCT6.
+// User LD7: green LED is a user LED connected to the I/O PE11 of the STM32F303VCT6.
+// User LD8: orange LED is a user LED connected to the I/O PE14 of the STM32F303VCT6.
+// AHB2 starts at address 0x4800 0000
+// GPIOE is at boundary addrs 0x4800 1000 - 0x4800 13FF
+#define PERIPH_BASE			 	(0x40000000UL)
+#define AHB2_PERIPH_OFFSET		(0x08000000UL)
+#define AHB2_PERIPH_BASE		(PERIPH_BASE + AHB2_PERIPH_OFFSET)
+
+#define GPIOB_OFFSET			(0x1000UL)
+#define GPIOB_BASE				(AHB2_PERIPH_BASE + GPIOB_OFFSET)
+
+//RCC is connected to AHB1 bus so we need to account for it by defining
+//extra address constants here
+#define AHB1_PERIPH_OFFSET		(0x08000000UL)
+#define AHB1_PERIPH_BASE		(PERIPH_BASE + AHB2_PERIPH_OFFSET)
+#define RCC_OFFSET				(0x)
