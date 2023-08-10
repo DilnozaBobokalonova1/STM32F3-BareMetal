@@ -1,10 +1,9 @@
 //	Where is LED connected?
 //	Port: Port E
-//	Pin: 9, 8, 10, 15, 11, 14
+//	Pins: 9, 8, 10, 15, 11, 14
 // 	User LD4: blue LED is a user LED connected to the I/O PE8 of the STM32F303VCT6.
 //	User LD5: orange LED is a user LED connected to the I/O PE10 of the STM32F303VCT6.
 // 	User LD6: green LED is a user LED connected to the I/O PE15 of the STM32F303VCT6.
-// 	User LD8: orange LED is a user LED connected to the I/O PE14 of the STM32F303VCT6.
 // 	AHB2 starts at address 0x4800 0000
 // 	GPIOE is at boundary addrs 0x4800 1000 - 0x4800 13FF
 #include <stdint.h>
@@ -16,14 +15,11 @@
 #define GPIOE_OFFSET			(0x1000UL)
 #define GPIOE_BASE				(AHB2_PERIPH_BASE + GPIOE_OFFSET)
 
-//RCC is connected to AHB1 bus so we need to account
-//for it by defining extra address constants
 #define AHB1_PERIPH_OFFSET		(0x00020000UL)
 #define AHB1_PERIPH_BASE		(PERIPH_BASE + AHB1_PERIPH_OFFSET)
 #define RCC_OFFSET				(0x1000UL)
 #define RCC_BASE				(AHB1_PERIPH_BASE + RCC_OFFSET)
 
-//to enable pin E, we have to set its position to 1 (its at Bit 21)
 #define GPIOEEN					(1U<<21) //	0b 0000 0000 0001 0000 0000 0000 0000 0000
 
 #define PIN15					(1U<<15)
@@ -34,11 +30,6 @@
 
 #define __IO 					volatile
 
-//we only need AHPENR register to enable the clock
-//the address spaces after do not have to be defined
-//we need to account for the space before which have
-//clock control register CR/clock config register CFGR
-//clock interrupt register CIR/APB1 & APB2 reset registers
 typedef struct {
 	volatile uint32_t DUMMY[5];		//32*5 = 160 bits occupied
 	volatile uint32_t AHBENR;		/*!< RCC AHB peripheral clock register,		Address offset: 0x14		*/
@@ -47,15 +38,8 @@ typedef struct {
 
 typedef struct {
 	volatile uint32_t MODER;		/*!< GPIO port mode register,					Address offset: 0x00		*/
-//	__IO uint32_t OTYPER;			/*!< GPIO port output type register,			Address offset: 0x04		*/
-//	__IO uint32_t OSPEEDR;			/*!< GPIO port output speed register,			Address offset: 0x08		*/
-//	__IO uint32_t PUPDR;			/*!< GPIO port pull-up/pull-down register,		Address offset: 0x0C		*/
-//	__IO uint32_t IDR;				/*!< GPIO port input data register,				Address offset: 0x10		*/
 	volatile uint32_t DUMMY[4];		/* for the purpose of taking up same space in mem as 4 registers before ODR */
 	volatile uint32_t ODR;			/*!< GPIO port output data register,			Address offset: 0x14		*/
-//	__IO uint32_t BSRR;				/*!< GPIO port bit set/reset register,			Address offset: 0x18		*/
-//	__IO uint32_t LCKR;				/*!< GPIO port configuration lock register,		Address offset: 0x1C		*/
-//	__IO uint32_t AFR[2];			/*!< GPIO alternate function register,			Address offset: 0x20-0x24	*/
 } GPIO_TypeDef;
 
 #define RCC					((RCC_TypeDef*) RCC_BASE)
@@ -81,7 +65,6 @@ int main(void) {
 		for (int i = 0; i < 1000000; i++) {}
 	}
 }
-
 
 
 

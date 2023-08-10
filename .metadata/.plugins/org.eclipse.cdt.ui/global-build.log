@@ -76,3 +76,17 @@ Finished building: default.size.stdout
  
 Finished building: 1_led_toggle_adr_struct.list
  
+12:23:56 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 1_led_toggle_adr_struct.elf
+ 
+arm-none-eabi-size   1_led_toggle_adr_struct.elf 
+arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
+   text	   data	    bss	    dec	    hex	filename
+    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
+Finished building: default.size.stdout
+ 
+Finished building: 1_led_toggle_adr_struct.list
+ 
