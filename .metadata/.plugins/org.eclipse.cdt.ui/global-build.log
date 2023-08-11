@@ -1,92 +1,35 @@
-12:06:52 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
+18:21:26 **** Incremental Build of configuration Debug for project 2_gpio_output ****
 make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:42:54: error: invalid digit "8" in octal constant
-   42 | #define PIN8                                    (1U<<08)
-      |                                                      ^~
-../Src/main.c:45:49: note: in expansion of macro 'PIN8'
-   45 | #define LED_4_PIN                               PIN8
-      |                                                 ^~~~
-../Src/main.c:102:31: note: in expansion of macro 'LED_4_PIN'
-  102 |                 GPIOE->ODR ^= LED_4_PIN;
-      |                               ^~~~~~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j9 all" terminated with exit code 2. Build might be incomplete.
-12:09:33 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
-make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_adr_struct.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/2_gpio_output/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2_gpio_output.elf
  
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
-arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
+arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
    text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
+    772	      8	   1568	   2348	    92c	2_gpio_output.elf
 Finished building: default.size.stdout
  
-Finished building: 1_led_toggle_adr_struct.list
+Finished building: 2_gpio_output.list
  
-12:09:39 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
+18:21:31 **** Incremental Build of configuration Debug for project 2_gpio_output ****
 make -j9 all 
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
+arm-none-eabi-size   2_gpio_output.elf 
    text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
+    772	      8	   1568	   2348	    92c	2_gpio_output.elf
 Finished building: default.size.stdout
  
-12:12:20 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
+18:21:49 **** Incremental Build of configuration Debug for project 2_gpio_output ****
 make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_adr_struct.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2_gpio_output.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/2_gpio_output/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2_gpio_output.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2_gpio_output.elf
  
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
-arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
+arm-none-eabi-size   2_gpio_output.elf 
+arm-none-eabi-objdump -h -S  2_gpio_output.elf  > "2_gpio_output.list"
    text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
+    772	      8	   1568	   2348	    92c	2_gpio_output.elf
 Finished building: default.size.stdout
  
-Finished building: 1_led_toggle_adr_struct.list
- 
-12:17:25 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
-make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_adr_struct.elf
- 
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
-arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
-   text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
-Finished building: default.size.stdout
- 
-Finished building: 1_led_toggle_adr_struct.list
- 
-12:20:20 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
-make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_adr_struct.elf
- 
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
-arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
-   text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
-Finished building: default.size.stdout
- 
-Finished building: 1_led_toggle_adr_struct.list
- 
-12:23:56 **** Incremental Build of configuration Debug for project 1_led_toggle_adr_struct ****
-make -j9 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_adr_struct.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/1_led_toggle_adr_struct/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_adr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_adr_struct.elf
- 
-arm-none-eabi-size   1_led_toggle_adr_struct.elf 
-arm-none-eabi-objdump -h -S  1_led_toggle_adr_struct.elf  > "1_led_toggle_adr_struct.list"
-   text	   data	    bss	    dec	    hex	filename
-    772	      8	   1568	   2348	    92c	1_led_toggle_adr_struct.elf
-Finished building: default.size.stdout
- 
-Finished building: 1_led_toggle_adr_struct.list
+Finished building: 2_gpio_output.list
  
