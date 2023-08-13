@@ -252,3 +252,6 @@ java.io.FileNotFoundException: /Users/dilnozabobokalonova/Desktop/embedded/STM32
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1040)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1243)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-08-12 20:43:54.433
+!MESSAGE Indexed '4_gpio_input' (4 sources, 60 headers) in 1.31 sec: 2,710 declarations; 3,853 references; 3 unresolved inclusions; 30 syntax errors; 605 unresolved names (8.4%)

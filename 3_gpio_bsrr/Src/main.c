@@ -16,8 +16,10 @@ int main() {
 
 	while(1) {
 		GPIOE->BSRR = LED_PIN;
+		GPIOE->BSRR = (1U<<24);
 		for (int i = 0; i < 1000000; i++) {}
 		GPIOE->BSRR = (1U<<31);
-		for (int i = 0; i < 100000; i++) {}
+		GPIOE->BSRR = LED_PIN8;
+		for (int i = 0; i < 1000000; i++) {}
 	}
 }
