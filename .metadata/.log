@@ -380,3 +380,9 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/dilno
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-08-12 22:57:10.383
 !MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-08-12 23:19:04.482
+!MESSAGE Indexed '5_uart_tx' (4 sources, 60 headers) in 3.79 sec: 2,708 declarations; 3,927 references; 3 unresolved inclusions; 30 syntax errors; 605 unresolved names (8.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-08-13 00:47:39.098
+!MESSAGE Indexed '9_adc' (4 sources, 60 headers) in 1.69 sec: 2,708 declarations; 3,927 references; 3 unresolved inclusions; 30 syntax errors; 605 unresolved names (8.4%)
