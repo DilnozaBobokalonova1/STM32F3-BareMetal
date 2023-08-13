@@ -110,3 +110,268 @@ Finished building: default.size.stdout
  
 Finished building: 3_gpio_bsrr.list
  
+21:53:54 **** Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+21:54:08 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+21:55:00 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+21:55:16 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-size   4_gpio_input.elf 
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+21:58:26 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:01:32 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:03:19 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:04:23 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:04:41 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:27:31 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:34:11 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    784	      8	   1568	   2360	    938	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:34:37 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    792	      8	   1568	   2368	    940	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:35:24 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:42:39 **** Incremental Build of configuration Debug for project 3_gpio_bsrr ****
+make -j9 all 
+arm-none-eabi-size   3_gpio_bsrr.elf 
+   text	   data	    bss	    dec	    hex	filename
+    800	      8	   1568	   2376	    948	3_gpio_bsrr.elf
+Finished building: default.size.stdout
+ 
+22:51:16 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    816	      8	   1568	   2392	    958	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:53:11 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    800	      8	   1568	   2376	    948	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:53:28 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:54:26 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+22:57:29 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	      8	   1568	   2352	    930	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
+23:02:47 **** Incremental Build of configuration Debug for project 4_gpio_input ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "4_gpio_input.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/4_gpio_input/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4_gpio_input.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4_gpio_input.elf
+ 
+arm-none-eabi-size   4_gpio_input.elf 
+arm-none-eabi-objdump -h -S  4_gpio_input.elf  > "4_gpio_input.list"
+   text	   data	    bss	    dec	    hex	filename
+    816	      8	   1568	   2392	    958	4_gpio_input.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4_gpio_input.list
+ 
