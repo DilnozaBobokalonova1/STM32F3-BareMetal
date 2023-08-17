@@ -1,0 +1,31 @@
+/*
+ * adc.c
+ *
+ *  Created on: Aug 16, 2023
+ *      Author: dilnozabobokalonova
+ */
+#include "stm32f3xx.h"
+
+#define GPIOAEN					(1U<<17)
+//I'd like to enable ADC2_IN2 that is located at PA5
+#define ADC12EN			(1U<<28)
+
+
+void pa_5_adc_init(void) {
+
+	/*Configure the ADC GPIO pin*/
+
+	/*Enable clock access to GPIOA*/
+	RCC->AHBENR |= GPIOAEN;
+	/*Set the mode of PA5 to analog mode*/
+	/* PA5 is located at MODE5 which are bits 10 & 11 */
+	/* To set to analog mode, both bits have to be set to 1 */
+	GPIOA->MOD
+
+	/*Configure the ADC module*/
+	/*Enable clock access to ADC */
+	/*Configure the ADC parameters*/
+
+
+
+}

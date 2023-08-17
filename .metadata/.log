@@ -386,3 +386,16 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/dilno
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-08-13 00:47:39.098
 !MESSAGE Indexed '9_adc' (4 sources, 60 headers) in 1.69 sec: 2,708 declarations; 3,927 references; 3 unresolved inclusions; 30 syntax errors; 605 unresolved names (8.4%)
+!SESSION 2023-08-16 17:07:24.965 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/dilnozabobokalonova/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/dilnozabobokalonova/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-08-16 17:07:35.013
+!MESSAGE Log4j2 initialized with config file /Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-08-16 17:07:46.182
+!MESSAGE Started RMI Server, listening on port 41337
