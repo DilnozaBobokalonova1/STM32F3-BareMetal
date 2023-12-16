@@ -43,11 +43,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  19 .debug_line   00000599  00000000  00000000  00025433  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_str    00072513  00000000  00000000  000259cc  2**0
+ 20 .debug_str    000724be  00000000  00000000  000259cc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_frame  00000054  00000000  00000000  00097ee0  2**2
+ 21 .debug_frame  00000054  00000000  00000000  00097e8c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000078  00000000  00000000  00097f34  2**0
+ 22 .debug_line_str 00000079  00000000  00000000  00097ee0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -102,19 +102,25 @@ int main(void) {
  80001e8:	4a22      	ldr	r2, [pc, #136]	; (8000274 <main+0xa0>)
  80001ea:	f443 1300 	orr.w	r3, r3, #2097152	; 0x200000
  80001ee:	6153      	str	r3, [r2, #20]
-	/*Set PE8 & PE15 as Output Pins so set MODER bits 16/17, 30/31 */
+
+	/*Set PE8 & PE15 as Output Pins
+	 * set MODER bits 16/17, 30/31 */
+
+	//it's like 8*2
 	GPIOE->MODER |= (1U<<30);
  80001f0:	4b21      	ldr	r3, [pc, #132]	; (8000278 <main+0xa4>)
  80001f2:	681b      	ldr	r3, [r3, #0]
  80001f4:	4a20      	ldr	r2, [pc, #128]	; (8000278 <main+0xa4>)
  80001f6:	f043 4380 	orr.w	r3, r3, #1073741824	; 0x40000000
  80001fa:	6013      	str	r3, [r2, #0]
+	//it's like 8*2 + 1
 	GPIOE->MODER &=~(1U<<31);
  80001fc:	4b1e      	ldr	r3, [pc, #120]	; (8000278 <main+0xa4>)
  80001fe:	681b      	ldr	r3, [r3, #0]
  8000200:	4a1d      	ldr	r2, [pc, #116]	; (8000278 <main+0xa4>)
  8000202:	f023 4300 	bic.w	r3, r3, #2147483648	; 0x80000000
  8000206:	6013      	str	r3, [r2, #0]
+
 	GPIOE->MODER |= (1U<<16);
  8000208:	4b1b      	ldr	r3, [pc, #108]	; (8000278 <main+0xa4>)
  800020a:	681b      	ldr	r3, [r3, #0]
@@ -127,6 +133,7 @@ int main(void) {
  8000218:	4a17      	ldr	r2, [pc, #92]	; (8000278 <main+0xa4>)
  800021a:	f423 3300 	bic.w	r3, r3, #131072	; 0x20000
  800021e:	6013      	str	r3, [r2, #0]
+
 	/*Set PA0 as Input Pin so set MODER bits 0,1 to 00*/
 	GPIOA->MODER &=~(1U<<0);
  8000220:	f04f 4390 	mov.w	r3, #1207959552	; 0x48000000
@@ -143,13 +150,14 @@ int main(void) {
 
 	while(1) {
 		//note that BTN is by default active low
-		if (GPIOA->IDR & BTN_PIN) {
+		if (GPIOA->IDR & BTN_PIN) { //if both result in 1?
  8000240:	f04f 4390 	mov.w	r3, #1207959552	; 0x48000000
  8000244:	691b      	ldr	r3, [r3, #16]
  8000246:	f003 0301 	and.w	r3, r3, #1
  800024a:	2b00      	cmp	r3, #0
  800024c:	d008      	beq.n	8000260 <main+0x8c>
 			//turn on LED
+			//BSRR bits 15:0 correspond to setting the bit
 			GPIOE->BSRR = LED_PIN;
  800024e:	4b0a      	ldr	r3, [pc, #40]	; (8000278 <main+0xa4>)
  8000250:	f44f 4200 	mov.w	r2, #32768	; 0x8000
@@ -161,6 +169,7 @@ int main(void) {
  800025e:	e7ef      	b.n	8000240 <main+0x6c>
 		} else {
 			//turn off LED
+			//BSRR bits 31:16 correspond to resetting
 			GPIOE->BSRR = (1U<<31);
  8000260:	4b05      	ldr	r3, [pc, #20]	; (8000278 <main+0xa4>)
  8000262:	f04f 4200 	mov.w	r2, #2147483648	; 0x80000000
@@ -169,7 +178,7 @@ int main(void) {
  8000268:	4b03      	ldr	r3, [pc, #12]	; (8000278 <main+0xa4>)
  800026a:	f04f 7280 	mov.w	r2, #16777216	; 0x1000000
  800026e:	619a      	str	r2, [r3, #24]
-		if (GPIOA->IDR & BTN_PIN) {
+		if (GPIOA->IDR & BTN_PIN) { //if both result in 1?
  8000270:	e7e6      	b.n	8000240 <main+0x6c>
  8000272:	bf00      	nop
  8000274:	40021000 	.word	0x40021000

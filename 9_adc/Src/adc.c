@@ -7,79 +7,94 @@
 #include "stm32f3xx.h"
 #include <adc.h>
 
-#define GPIOAEN				(1U<<17)
-//I'd like to enable ADC2_IN2 that is located at PA5
-//our ADC1/2 within RCC clock enable register is at bit 28
-#define ADC2EN				(1U<<28)
+#define GPIOAEN					(1U<<17)
 
-//#define ADC2_CH2		(~(0x1F<<6) | (1<<1))
-//the sequence length will be 1 as we are only making one conversion
-#define ADC_SEQ_LEN_1	 	0x00
+//ADC1/2 are enabled within RCC clock enable register
+//for AHB3 bus located at bit position 28
+#define ADC1EN					(1U<<28)
 
-#define CR_AD_EN			(1U<<00)
-#define CR_ADSTART			(1U<<2)
+// ADC1 Channel 2 to be put within Sequence register 1 that
+// starts at bit position 6 of ADC regular sequence register 1.
+// set positions 6-10 to 00010 in the 32-bit register (0000 ... 0000 1000 0000)
+#define ADC1_CH2				(1U<<7)
+
+//00000 for only 1 conversion length
+#define ADC1_SEQ_LEN	 		0x00
+
+//Set bit 0 to 1 within the ADC Control Register to enable the ADC
+#define CR_ADC_EN				(1U<<00)
+//Set bit 2 to 1 within the ADC Control Register to start the ADC conversion
+#define CR_ADC_START			(1U<<2)
 
 //status register end of conversion flag
 //our EOC is at bit 2 of the register
 //setting it to 1 means ADC conversion complete
-#define SR_EOC				(1U<<2)
+#define SR_EOC					(1U<<2)
 
-//adc configged with 3 channels
-//ch2, ch3, ch5
-//1st = ch5
-//2nd = ch2
-//3rd = ch3
-void pa_5_adc_init(void) {
 
-	/*Configure the ADC GPIO pin*/
+#define GPIOEEN					(1U<<21)
+#define PIN15					(1U<<15)
+#define LED_PIN					PIN15
+#define PIN8					(1U<<8)
+#define LED_PIN8				PIN8
 
-	/*Enable clock access to GPIOA*/
+void pa_1_adc_init(void) {
+
+					/*Configure the ADC GPIO pin*/
+
+	/*	Enable clock access to GPIOA*/
 	RCC->AHBENR |= GPIOAEN;
-	/*Set the mode of PA5 to analog mode*/
-	/* PA5 is located at MODE5 which are bits 10 & 11 */
-	/* To set to analog mode, both bits have to be set to 1 */
-//	GPIOA->MODER |= (1U<<10);
-//	GPIOA->MODER |= (1U<<11);
-	//one-liner
-	GPIOA->MODER |= ((1U << 10) | (1U << 11));
 
-	/*Configure the ADC module*/
+	/*	Set the mode of PA1 to analog mode*/
+	/* 	PA1 is located at MODE1 which are bits 2 & 3 */
+	/* 	To set to analog mode, both bits have to be set to 1 */
+	GPIOA->MODER |= ((1U << 2) | (1U << 3));
+
+					/*Configure the ADC module*/
+
 	/*Enable clock access to ADC */
-	//our ADCs are connected to AHB3 bus
-	RCC->AHBENR |= ADC2EN;
+	RCC->AHBENR |= ADC1EN;
 
-	/*Conversion sequence length*/
-	//setting it first cus it's located within SQ1 which I'm later using to set my channel
-	ADC2->SQR1 = ADC_SEQ_LEN_1;
 	/*Conversion sequence start*/
-	//our SQR1's SQ1 needs to be set to channel 2 (ADC2_IN2 is chann 2)
-	//hence we set the bits of SQ1 to contain 2 in binary form.
-	uint32_t currentVal = ADC2->SQR1;
-	//we set the bits 6-10 to 00010 to represent the 2nd channel being in 1st sequence
-	ADC2->SQR1 = (currentVal & ~ 0xC0) | (0x01 << 7);
+	//I'm using Channel 2 within ADC1 so set first conversion of sequence register to 00010
+	ADC1->SQR1 = ADC1_CH2;
+
+	//Set the sequence length of the ADC conversion
+	//Now note that the SQR1 SQ1 bits have been set, so we cannot modify them. OR the SEQ len bits
+	ADC1->SQR1 |= ADC1_SEQ_LEN;
+
 	/*Enable ADC module*/
-	//in my case, the channel I'm using is channel 2
-	ADC2->CR = CR_AD_EN;
-
-
+	ADC1->CR |= CR_ADC_EN;
 }
 
 void start_conversion(void) {
 	//start the ADC conversion
-	//need to check control registers to see which value allows us to start conversion
-	ADC2->CR |= CR_ADSTART;
+	ADC1->CR |= CR_ADC_START;
 
 }
 
 uint32_t adc_read(void) {
+
+	RCC->AHBENR |= GPIOEEN;
+	GPIOE->MODER |= (1U<<30);
+	GPIOE->MODER &=~(1U<<31);
+	GPIOE->MODER |= (1U<<16);
+	GPIOE->MODER &= ~(1U<<17);
+
 	//wait for the conversion to be complete
 	//while the status register for EOC is set to 0,
 	//aka conversion not complete, we get stuck here
-	while (!(ADC2->ISR & SR_EOC)) {};
+	while (!(ADC1->ISR & SR_EOC)) {
+		GPIOE->BSRR = LED_PIN;
+		GPIOE->BSRR = LED_PIN8;
+		GPIOE->BSRR = (1U<<31);
+		GPIOE->BSRR = (1U<<24);
+	};
 
+//	GPIOE->BSRR = (1U<<31);
+//	GPIOE->BSRR = (1U<<24);
 	//Read converted result
-	return (ADC2->DR);
-
+	return (ADC1->DR);
 }
 
 

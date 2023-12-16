@@ -1,7 +1,0 @@
-#include "stm32f3xx.h"
-#include "adc.h"
-
-int main(void) {
-
-
-}

@@ -24,15 +24,15 @@
 #define RCC_OFFSET				(0x1000UL)
 #define RCC_BASE				(AHB1_PERIPH_BASE + RCC_OFFSET)
 
-#define AHB1EN_R_OFFSET			(0x14UL)
-#define RCC_AHB1EN_R			(* (volatile unsigned int *) (RCC_BASE + AHB1EN_R_OFFSET))
+#define AHBEN_R_OFFSET			(0x14UL)
+#define RCC_AHB1EN_R			(* (volatile unsigned int *) (RCC_BASE + AHBEN_R_OFFSET))
+
+//to enable pin E using RCC, we have to set its position to 1 (its at Bit 21)
+#define GPIOEEN					(1U<<21) //	0b 0000 0000 0001 0000 0000 0000 0000 0000
 
 //32 bits long mode register
 #define MODE_R_OFFSET			(0x00UL)
 #define GPIOE_MODE_R			(* (volatile unsigned int *) (GPIOE_BASE + MODE_R_OFFSET))
-
-//to enable pin E, we have to set its position to 1 (its at Bit 21)
-#define GPIOEEN					(1U<<21) //	0b 0000 0000 0001 0000 0000 0000 0000 0000
 
 #define OD_R_OFFSET				(0x14UL)
 #define GPIOE_OD_R				(* (volatile unsigned int *) (GPIOE_BASE + OD_R_OFFSET))
@@ -41,7 +41,7 @@
 #define PIN10					(1U<<10)
 #define LED_PIN					PIN15
 //turn LED5 to orange color
-#define LED_5_PIN					PIN10
+#define LED_5_PIN				PIN10
 
 
 
@@ -52,10 +52,11 @@
 
 int main(void) {
 	// 1. Enable clock access to GPIOE
-	RCC_AHB1EN_R |= GPIOEEN;
+	RCC_AHBEN_R |= GPIOEEN;
 
-	// 2. Set PE15 as output pin
+	// 2. Set PE15 as output pin (01)
 	GPIOE_MODE_R |= (1U<<30);  //Set bit 30 to 1
+	//if any specific bit is initially a 1 in MODE, &=~ ensures it stays 1 since ~1U<<31 turns into all 1s except for position 31
 	GPIOE_MODE_R &= ~(1U<<31); //Set bit 31 to 0
 
 //	// 2.2 Set PE10 as output pin
@@ -66,7 +67,7 @@ int main(void) {
 		// 3. Set PE15 high
 //		GPIOE_OD_R |= LED_PIN;
 
-		// 4. toggle PA15
+		// 4. toggle PE15
 		GPIOE_OD_R ^= LED_PIN;
 		GPIOE_OD_R ^= LED_5_PIN;
 		for (int i = 0; i < 1000000; i++) {
