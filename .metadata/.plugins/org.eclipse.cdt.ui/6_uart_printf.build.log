@@ -1,0 +1,17 @@
+12:52:37 **** Incremental Build of configuration Debug for project 6_uart_printf ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "6_uart_printf.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/6_uart_printf/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6_uart_printf.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6_uart_printf.elf
+ 
+arm-none-eabi-size   6_uart_printf.elf 
+arm-none-eabi-objdump -h -S  6_uart_printf.elf  > "6_uart_printf.list"
+   text	   data	    bss	    dec	    hex	filename
+   5180	    100	   1900	   7180	   1c0c	6_uart_printf.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6_uart_printf.list
+ 
+
+12:52:38 Build Finished. 0 errors, 0 warnings. (took 403ms)
+

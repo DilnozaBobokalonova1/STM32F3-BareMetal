@@ -1050,3 +1050,62 @@ org.eclipse.core.runtime.CoreException: Target not available.
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.cdt.dsf 4 10001 2023-12-15 19:26:53.506
 !MESSAGE Target not available.
+!SESSION 2023-12-17 12:40:29.209 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/dilnozabobokalonova/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/dilnozabobokalonova/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-12-17 12:41:06.736
+!MESSAGE Log4j2 initialized with config file /Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.buildanalyzer.ui 1 0 2023-12-17 12:41:15.692
+!MESSAGE Failed to parse map file
+!STACK 0
+java.io.FileNotFoundException: /Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/Debug/0_led_toggle_adr.map (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at elf_analyzer.datamodel.BuildDataProviderMap.readFile(BuildDataProviderMap.java:55)
+	at elf_analyzer.datamodel.BuildDataProviderMap.compute(BuildDataProviderMap.java:358)
+	at elf_analyzer.datamodel.BuildDataProviderMap.computeMemConfig(BuildDataProviderMap.java:402)
+	at elf_analyzer.datamodel.BuildData.compute(BuildData.java:81)
+	at elf_analyzer.ElfAnalyzerView.inputChanged(ElfAnalyzerView.java:265)
+	at elf_analyzer.ElfAnalyzerView.lambda$7(ElfAnalyzerView.java:506)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.st.stm32cube.ide.mcu.buildanalyzer.ui 1 0 2023-12-17 12:41:16.780
+!MESSAGE Failed to parse map file
+!STACK 0
+java.io.FileNotFoundException: /Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/0_led_toggle_adr/Debug/0_led_toggle_adr.map (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at elf_analyzer.datamodel.BuildDataProviderMap.readFile(BuildDataProviderMap.java:55)
+	at elf_analyzer.datamodel.BuildDataProviderMap.compute(BuildDataProviderMap.java:358)
+	at elf_analyzer.datamodel.BuildDataProviderMap.computeLinkerSymbols(BuildDataProviderMap.java:410)
+	at elf_analyzer.datamodel.BuildData.compute(BuildData.java:104)
+	at elf_analyzer.ElfAnalyzerView.inputChanged(ElfAnalyzerView.java:265)
+	at elf_analyzer.ElfAnalyzerView.lambda$7(ElfAnalyzerView.java:506)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-12-17 12:41:17.532
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-12-17 12:49:31.983
+!MESSAGE Indexed '6_uart_printf' (4 sources, 60 headers) in 2.94 sec: 2,752 declarations; 3,963 references; 4 unresolved inclusions; 30 syntax errors; 615 unresolved names (8.4%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-12-17 12:54:42.657
+!MESSAGE Indexed '7_uart_modular' (3 sources, 64 headers) in 1.15 sec: 3,260 declarations; 5,387 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.023%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-12-17 13:05:42.240
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-12-17 13:06:08.265
+!MESSAGE Won't launch debug session since we failed to locate the binary.
