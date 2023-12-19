@@ -1,0 +1,47 @@
+/*
+ * systick.c
+ *
+ *  Created on: Dec 19, 2023
+ *      Author: dilnozabobokalonova
+ */
+
+#include "stm32f3xx.h"
+
+/**
+ * We would like to achieve a 1ms delay using Systick timer
+ */
+
+//set count to 8000 since sysclk is 8MHz
+//hence lets set num of cycles to 8k to achieve 1ms delay
+#define SYSTICK_LOAD_VAL		8000
+
+/**
+ * Now we work directly with baremetal register of Systick timer
+ * provided by Arm Cortex-M4 documentation.
+ */
+/**
+ * bit position 1 signifies SysTick enablement
+ */
+#define CTRL_ENABLE				(1U<<0)
+/**
+ * bit position 2 signifies whether
+ * to use internal or external clock
+ * (1 is internal, 0 is external)
+ */
+#define CTRL_CLKSRC				(1U<<2)
+
+/**
+ * CountFlag at bit position 16 signifies
+ * whether the counter has counter to 0.
+ * 1 if timer counter to 0
+ */
+#define CTRL_COUNT_FLAG				(1U<<16)
+
+
+
+void systick_delay_ms(int n) {
+
+	/* Configure SysTick  */
+	SysTick->LOAD = SYSTICK_LOAD_VAL;
+
+}

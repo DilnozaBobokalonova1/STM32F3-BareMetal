@@ -1,0 +1,17 @@
+15:11:26 **** Incremental Build of configuration Debug for project 11_systick_delay ****
+make -j9 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303VCTx -DSTM32 -DSTM32F3 -DSTM32F3DISCOVERY -DSTM32F303xC -c -I../Inc -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Device/ST/STM32F3xx/Include -I/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/chip_headers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "11_systick_delay.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/dilnozabobokalonova/Desktop/embedded/STM32F3-BareMetal_code/11_systick_delay/STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11_systick_delay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11_systick_delay.elf
+ 
+arm-none-eabi-size   11_systick_delay.elf 
+arm-none-eabi-objdump -h -S  11_systick_delay.elf  > "11_systick_delay.list"
+   text	   data	    bss	    dec	    hex	filename
+    848	      8	   1568	   2424	    978	11_systick_delay.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11_systick_delay.list
+ 
+
+15:11:26 Build Finished. 0 errors, 0 warnings. (took 540ms)
+

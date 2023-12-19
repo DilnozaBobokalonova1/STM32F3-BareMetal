@@ -1,0 +1,21 @@
+/*
+ * systick.c
+ *
+ *  Created on: Dec 19, 2023
+ *      Author: dilnozabobokalonova
+ */
+
+#include "stm32f3xx.h"
+
+/**
+ * We would like to achieve a 1ms delay using Systick timer
+ */
+
+//set count to 8000 since sysclk is 8MHz
+//hence lets set num of cycles to 8k to achieve 1ms delay
+#define SYSTICK_LOAD_VAL		8000
+
+void systick_delay_ms(int n) {
+
+	Sys
+}
